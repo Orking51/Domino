@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>jeu API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>jeu</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="jeu.Affichage"><code class="flex name class">
+<span>class <span class="ident">Affichage</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class qui gère tout l'affichage de la partie</p>
+<p>Initialise l'affichage avec des messages de bienvenue et instancie les attributs de la classe affichage
+Retourne rien et prend aucun argument</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Affichage():
+    &#34;&#34;&#34;
+    Class qui gère tout l&#39;affichage de la partie
+    &#34;&#34;&#34;
+    def  __init__(self):
+        &#34;&#34;&#34;
+        Initialise l&#39;affichage avec des messages de bienvenue et instancie les attributs de la classe affichage
+        Retourne rien et prend aucun argument
+        &#34;&#34;&#34;
+        self.plateau = deque([]) # une file de tuples représentant les dominos sur le plateau.
+        self.clear = lambda: system(&#39;cls||clear&#39;) # cls pour Windows et clear pour Linux
+        self.console = Console()
+        print(&#34;Bienvenue dans un jeu de domino.&#34;)
+
+    def input(self):
+        &#34;&#34;&#34;
+        Permet de gérer le input du joueur
+        Prends aucun argument et renvoie l&#39;input (une String) choisie par l&#39;utilisateur
+        &#34;&#34;&#34;
+        while is_pressed(&#39;droite&#39;) or is_pressed(&#39;gauche&#39;) or is_pressed(&#39;enter&#39;): sleep(0.05)
+        input = None
+        while input == None:
+            if is_pressed(&#39;right&#39;): input = &#39;droite&#39;
+            elif is_pressed(&#39;left&#39;): input = &#39;gauche&#39;
+            elif is_pressed(&#39;enter&#39;): input = &#39;enter&#39;
+        return input
+
+    def print_plateau(self):
+        &#34;&#34;&#34;
+        Méthode qui affiche le plateau après que les joueurs aient joués. Donc doit présenter au moins un domino
+        La méthode qui prends aucun argument
+        &#34;&#34;&#34;
+        assert self.plateau != deque([])
+
+        self.console.print(&#34;=== Plateau de dominos ===&#34;, style=&#34;bold green&#34;)
+        print(&#34;&#34;)
+
+        largeur_console = shutil.get_terminal_size().columns
+        affichage_ligne = &#34;&#34;
+        longueur_actuelle = 0
+
+        for domino in self.plateau:
+            affichage_domino = f&#34;{domino[0]} ║ {domino[1]}&#34;
+            longueur_domino = len(affichage_domino) + 3 # +3  pour l&#39;espace en entre les dominos
+
+            # Si retour à la ligne
+            if longueur_actuelle + longueur_domino &gt; largeur_console:
+                print(&#34;&#34;)
+                print(affichage_ligne)  
+                affichage_ligne = affichage_domino  
+                longueur_actuelle = longueur_domino
+            else:
+                if affichage_ligne:
+                    affichage_ligne += &#34;   &#34; # 3espaces entre les domino
+                affichage_ligne += affichage_domino
+                longueur_actuelle += longueur_domino
+
+        # Afficher la dernière ligne s&#39;il en une reste
+        if affichage_ligne:
+            print(affichage_ligne, end=&#39;&#39;)
+
+        print(&#34;&#34;)
+        print(&#34;&#34;)
+
+    def plateau_et_deck(self, deck, afficher_plateau, info, nom_du_joueur, infoExceptionnelle, infoErreur, afficher_deck = True, domino_droite_ou_gauche = None, afficher_menu_de_fin=False):
+        &#34;&#34;&#34;
+        Méthode qui permet d&#39;afficher le deck du joueur.
+        Dépend des méthodes &#39;print_plateau()&#39; et 
+        Prend un argument:
+            - &#39;deck&#39;, une liste de tuples représentant les dominos du deck du joueur.
+            - &#39;afficher_plateau&#39;, un boolean qui détermine si on doit afficher le plateau ou non.
+            - &#39;info&#39;, une String qui indique qui est le premier joueur à jouer.
+            - &#39;nom_du_joueur&#39;, une String du nom du joueur qui joue
+            - &#39;infoExceptionnelle&#39;, une String qui indique quand la pioche est vide et si le jeu est terminé
+            - &#39;infoErreur&#39;, une String qui inique si le joueur ne peux pas jouer le domino qu&#39;il essaye de jouer
+            - &#39;afficher_deck&#39;, un boolean qui permet d&#39;afficher soit le deck du joueur, soit le menu pour chosir si le domino se place à droite ou à gauche
+            - &#39;domino_droite_ou_gauche&#39;, tuple des coordonnées du domino choisi qui peut se jouer à droite ou à gauche
+            - &#39;afficher_menu_de_fin&#39;, boolean permettant d&#39;afficher le menu de fin ou non
+        Retourne le domino choisi par le joueur et le l&#39;index du placement du curseur.
+        &#34;&#34;&#34;
+        taille_deck = len(deck)
+
+        affichage_du_deck = [f&#34;{domino[0]} ║ {domino[1]}&#34; for domino in deck[:-1]]
+        if infoExceptionnelle != &#34;PREMIER TOUR&#34;: affichage_du_deck.append(deck[-1])
+        else: 
+            affichage_du_deck.append(f&#34;{deck[-1][0]} ║ {deck[-1][1]}&#34;)
+            infoExceptionnelle = None
+        
+        flèche = 0  # Représente le curseur qui permet de choisir le domino
+        valide = False
+        action = [&#34;À droite&#34;, &#34;À gauche&#34;, &#34;Annuler&#34;]
+        choix_de_fin = [&#34;Rejouer&#34;, &#34;Quitter&#34;]
+
+        while not valide:
+            self.clear()
+
+            if infoExceptionnelle != None: self.console.print(infoExceptionnelle)
+            if infoErreur != None:
+                info = None
+                self.console.print(infoErreur)
+                print(&#34;&#34;)
+            if info != None: 
+                self.console.print(info)
+                print(&#34;&#34;)
+            if afficher_plateau == True: self.print_plateau()
+
+            # Affichage du menu de fin
+            if afficher_menu_de_fin:
+                self.console.print(f&#34;La partie est terminée. Voulez-vous rejouer ou quitter ?&#34;, end=&#39;     &#39;)
+                flèche = flèche % 2
+                for i, e in enumerate(choix_de_fin):
+                    if flèche == i:
+                        self.console.print(f&#39;\u2192 {e}&#39;, style=&#34;bold yellow&#34;, end=&#39;    &#39;)
+                    else:
+                        self.console.print(f&#39;  {e}&#39;, end=&#39;    &#39;)
+            # Affichage du deck avec le curseur
+            elif afficher_deck:
+                self.console.print(f&#34;=== Deck de {nom_du_joueur} ===&#34;, style=&#34;bold green&#34;)
+                print(&#34;&#34;)
+
+                flèche = flèche % taille_deck
+                for i, e in enumerate(affichage_du_deck):
+                    if flèche == i:
+                        self.console.print(f&#39;\u2192 {e}&#39;, style=&#34;bold yellow&#34;, end=&#39;    &#39;)
+                    else:
+                        self.console.print(f&#39;  {e}&#39;, end=&#39;    &#39;)
+            # Affichage du menu pour chosir si le domino se place à droite ou à gauche
+            else: 
+                self.console.print(f&#34;Où voulez-vous placer ce domino: {domino_droite_ou_gauche[0]} ║ {domino_droite_ou_gauche[1]}  ?&#34;, end=&#39;     &#39;)
+                flèche = flèche % 3
+                for i, e in enumerate(action):
+                    if flèche == i:
+                        self.console.print(f&#39;\u2192 {e}&#39;, style=&#34;bold yellow&#34;, end=&#39;    &#39;)
+                    else:
+                        self.console.print(f&#39;  {e}&#39;, end=&#39;    &#39;)
+            print(&#34;\n&#34;)
+
+            # Récupère l&#39;input de l&#39;utilisateur
+            touche = self.input()
+            if touche == &#39;droite&#39;:
+                flèche += 1
+            elif touche == &#39;gauche&#39;:
+                flèche -= 1
+                if flèche &lt; 0:
+                    flèche = taille_deck - 1
+            elif touche == &#39;enter&#39;: 
+                valide = True
+
+        input()  # Attend une nouvelle entrée pour annuler les actions de cet input
+
+        #Récupère le domino joué et le retourne  avec son index dans la liste
+        if afficher_menu_de_fin:
+            return 0, flèche % 2, 
+        elif affichage_du_deck:
+            if (flèche % taille_deck) == taille_deck -1: domino_joue = deck[-1]
+            else: domino_joue=deck[flèche % taille_deck]
+            return domino_joue, flèche % taille_deck
+        else:
+            domino_joue=deck[flèche % 3]
+            return domino_joue, flèche % 3
+
+    def fin(self, liste_gagnant):
+        &#34;&#34;&#34;
+        Méthode qui gère l&#39;affichage de la fin du jeu. Elle affiche le.s participant.s gagnant.s
+        Prend en argument: &#39;liste_gagnant&#39; une liste qui contient plusieur joueur si on est dans un cas d&#39;égalité et un élément si il y a qu&#39;un gagnant.
+        Retourne rien
+        &#34;&#34;&#34;
+        assert liste_gagnant != [], &#34;Erreur aucun gagnat n&#39;est donné dans la liste&#34;
+
+        self.clear()
+        if len(liste_gagnant)==1: 
+            message = f&#34;Le gagnant est {liste_gagnant[0].nom}&#34;
+        else: 
+            self.console.print(&#34;Les gagnants sont:&#34;, end=&#39; &#39;)
+            for i in range(len(liste_gagnant)):
+                message = f&#34;, {liste_gagnant[i].nom}&#34;
+            message.pop(0)
+            message.pop(0)
+            message += &#34; Bravo à eux!!!!&#34;
+        x, choix = self.plateau_et_deck(liste_gagnant[0].deck, None, message, None, None, None, False, None, True)
+        if choix == 0: 
+            self.clear()
+            jeu = Jeu()
+            jeu.partie()
+        else: 
+            self.clear()
+            self.console.print(&#34;Merci d&#39;avoir joué à notre jeu !!!&#34;)
+            quit()
+            
+    def bot(self, message):
+        &#34;&#34;&#34;
+        Méthode qui gère l&#39;affichage quand Bot joue
+        Prend en argument: &#39;message&#39; une String contenant un texte à afficher quand le Bot joue
+        Retourne rien
+        &#34;&#34;&#34;
+        assert type(message)==str, &#34;message doit être de type str&#34;
+
+        self.console.clear()
+        self.console.print(message)
+        self.console.print(&#34;&#34;)
+        self.print_plateau()
+        sleep(3)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="jeu.Affichage.bot"><code class="name flex">
+<span>def <span class="ident">bot</span></span>(<span>self, message)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Méthode qui gère l'affichage quand Bot joue
+Prend en argument: 'message' une String contenant un texte à afficher quand le Bot joue
+Retourne rien</p></div>
+</dd>
+<dt id="jeu.Affichage.fin"><code class="name flex">
+<span>def <span class="ident">fin</span></span>(<span>self, liste_gagnant)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Méthode qui gère l'affichage de la fin du jeu. Elle affiche le.s participant.s gagnant.s
+Prend en argument: 'liste_gagnant' une liste qui contient plusieur joueur si on est dans un cas d'égalité et un élément si il y a qu'un gagnant.
+Retourne rien</p></div>
+</dd>
+<dt id="jeu.Affichage.input"><code class="name flex">
+<span>def <span class="ident">input</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Permet de gérer le input du joueur
+Prends aucun argument et renvoie l'input (une String) choisie par l'utilisateur</p></div>
+</dd>
+<dt id="jeu.Affichage.plateau_et_deck"><code class="name flex">
+<span>def <span class="ident">plateau_et_deck</span></span>(<span>self, deck, afficher_plateau, info, nom_du_joueur, infoExceptionnelle, infoErreur, afficher_deck=True, domino_droite_ou_gauche=None, afficher_menu_de_fin=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Méthode qui permet d'afficher le deck du joueur.
+Dépend des méthodes 'print_plateau()' et
+Prend un argument:
+- 'deck', une liste de tuples représentant les dominos du deck du joueur.
+- 'afficher_plateau', un boolean qui détermine si on doit afficher le plateau ou non.
+- 'info', une String qui indique qui est le premier joueur à jouer.
+- 'nom_du_joueur', une String du nom du joueur qui joue
+- 'infoExceptionnelle', une String qui indique quand la pioche est vide et si le jeu est terminé
+- 'infoErreur', une String qui inique si le joueur ne peux pas jouer le domino qu'il essaye de jouer
+- 'afficher_deck', un boolean qui permet d'afficher soit le deck du joueur, soit le menu pour chosir si le domino se place à droite ou à gauche
+- 'domino_droite_ou_gauche', tuple des coordonnées du domino choisi qui peut se jouer à droite ou à gauche
+- 'afficher_menu_de_fin', boolean permettant d'afficher le menu de fin ou non
+Retourne le domino choisi par le joueur et le l'index du placement du curseur.</p></div>
+</dd>
+<dt id="jeu.Affichage.print_plateau"><code class="name flex">
+<span>def <span class="ident">print_plateau</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Méthode qui affiche le plateau après que les joueurs aient joués. Donc doit présenter au moins un domino
+La méthode qui prends aucun argument</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="jeu.Bot"><code class="flex name class">
+<span>class <span class="ident">Bot</span></span>
+<span>(</span><span>pioche, nom, nombre_de_domino)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Classe qui cree un Bot / Classe Fille de Joueur
+clases qui existe pour un potentiel dévellopement du projet </p>
+<p>Intancie un bot comme un joueur &ndash;&gt; Voir <strong>init</strong>(&hellip;) de la class Joueur</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Bot(Joueur):
+    &#34;&#34;&#34;
+    Classe qui cree un Bot / Classe Fille de Joueur 
+    clases qui existe pour un potentiel dévellopement du projet 
+    &#34;&#34;&#34;
+    def __init__(self, pioche, nom, nombre_de_domino):
+        &#34;&#34;&#34;
+        Intancie un bot comme un joueur --&gt; Voir __init__(...) de la class Joueur
+        &#34;&#34;&#34;
+        super().__init__(pioche, nom, nombre_de_domino)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="jeu.Joueur" href="#jeu.Joueur">Joueur</a></li>
+</ul>
+</dd>
+<dt id="jeu.Domino"><code class="flex name class">
+<span>class <span class="ident">Domino</span></span>
+<span>(</span><span>haut, bas)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Classe qui crée un domino, et qui s'apparente à la class Pion demandée.
+La méthode est inutile étant donné la structure de donné et l'algorithme adoptés mais est présente comme le stiple la consigne</p>
+<p>Méthode qui intancie un domino en lui donnant 2 cotés 'haut' et 'bas' après avoir vérifie que les valeurs donnés aux cotés des domino sont correcte</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Domino():
+    &#34;&#34;&#34;
+    Classe qui crée un domino, et qui s&#39;apparente à la class Pion demandée. 
+    La méthode est inutile étant donné la structure de donné et l&#39;algorithme adoptés mais est présente comme le stiple la consigne
+    &#34;&#34;&#34;
+    def __init__(self, haut, bas):
+        &#34;&#34;&#34;
+        Méthode qui intancie un domino en lui donnant 2 cotés &#39;haut&#39; et &#39;bas&#39; après avoir vérifie que les valeurs donnés aux cotés des domino sont correcte
+        &#34;&#34;&#34;
+        assert type(haut)==type(bas)==int, &#34;Erreur de le type les cotées des dominos doivent être des integer&#34;
+        assert -1&lt;haut&lt;7 and -1&lt;bas&lt;7, &#34;Erreur les valeurs donné au domino doivent être compris entre 0 et 6 comprit&#34;
+        self.haut=haut
+        self.bas=bas</code></pre>
+</details>
+</dd>
+<dt id="jeu.Jeu"><code class="flex name class">
+<span>class <span class="ident">Jeu</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Classe qui gère dirige le déroulement la partie.</p>
+<p>Méthode qui instantie la partie en créant un plateau, une pioche et des participants au jeu (humain ou robot) ainsi que des attribut utile au déroulement de la partie -&gt; voir commentaire pour plus de détail</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Jeu():
+    &#34;&#34;&#34;
+    Classe qui gère dirige le déroulement la partie.
+    &#34;&#34;&#34;
+    def __init__(self):
+        &#34;&#34;&#34;
+        Méthode qui instantie la partie en créant un plateau, une pioche et des participants au jeu (humain ou robot) ainsi que des attribut utile au déroulement de la partie -&gt; voir commentaire pour plus de détail
+        &#34;&#34;&#34;
+        liste_de_nom_de_bot = [&#34;François Pignon&#34;, &#34;Jacquouille la Fripouille&#34;, &#34;Bernard Morin&#34;, &#34;Godefroy de Montmirail&#34;, &#34;Gaston Tricard&#34;, &#34;Albert Merlot&#34;, &#34;L&#39;adjudant Gerber&#34;, &#34;Tiburce&#34;, 
+                               &#34;Francis Chichmont&#34;, &#34;Didier Jean-Marie Latour&#34;, &#34;Pascal Eusèbe Désiré Latour&#34;, &#34;Bernard André-Michel Latour&#34;, &#34;Gaston Lagaffe&#34;, &#34;Chewbacca&#34;, &#34;Le Grand Blond avec une chaussure noire&#34;,
+                               &#34;Stéphane Marchadot&#34;, &#34;L&#39;Âne (Jo)&#34;, &#34;Forrest Gump&#34;, &#34;Mister Bean&#34;]
+
+        self.pioche = Pioche()
+        self.affichage = Affichage()
+        self.participant =  []
+
+        # Demander le nombre de joueur
+        while True:
+            try:
+                nombre_de_joueur = int(input(&#34;Combien de joueurs veulent participer ? (1-4) \n&gt;&gt;&gt; &#34;))
+                if 1 &lt;= nombre_de_joueur &lt;= 4:
+                    break
+                else:
+                    print(&#34;Le nombre de joueurs doit être compris entre 1 et 3.&#34;)
+            except ValueError:
+                print(&#34;Veuillez entrer un nombre entier valide.&#34;)
+
+        # Demander le nombre de bots
+        nombre_de_bot = 0
+        while True and (4 - nombre_de_joueur)&gt;0:
+            try:
+                nombre_de_bot = int(input(f&#34;Combien de bots voulez-vous ajouter ? (0-{4 - nombre_de_joueur}) \n&gt;&gt;&gt; &#34;))
+                if 0 &lt;= nombre_de_bot &lt;= (4 - nombre_de_joueur):
+                    break
+                else:
+                    print(f&#34;Le nombre de bots doit être compris entre 0 et {4 - nombre_de_joueur}.&#34;)
+            except ValueError:
+                print(&#34;Veuillez entrer un nombre entier valide.&#34;)
+
+        self.nombre_de_participant = nombre_de_bot  + nombre_de_joueur  # Détermine le nombre de participant à la partie
+
+        # Détermine si les participant doivent avoir 5 où 7 domino en fonction de leur nombre (Voir règle)
+        if self.nombre_de_participant == 2:
+            for i in range(nombre_de_joueur):
+                nom = &#34;&#34;
+                while nom  == &#34;&#34;:
+                    nom = input(f&#34;Veuillez entrer le nom d&#39;un joueur non vide\n&gt;&gt;&gt; &#34;)
+                self.participant.append(Joueur(self.pioche, nom, 7))
+            for i in range(nombre_de_bot):
+                nom = liste_de_nom_de_bot.pop(randint(0,len(liste_de_nom_de_bot)-1)) # prend un nom dans la liste des noms des bots et évite que il y ait 2 fois le meme nom
+                self.participant.append(Bot(self.pioche, nom, 7))
+        else:
+            for i in range(nombre_de_joueur):
+                nom = &#34;&#34;
+                while nom  == &#34;&#34;:
+                    nom = input(f&#34;Veuillez entrer le nom d&#39;un joueur \n&gt;&gt;&gt; &#34;)
+                self.participant.append(Joueur(self.pioche, nom, 5))
+            for i in range(nombre_de_bot):
+                nom = liste_de_nom_de_bot.pop(randint(0,len(liste_de_nom_de_bot)-1)) # Permet d&#39;éviter que il y ait 2 fois le meme nom
+                self.participant.append(Bot(self.pioche, nom, 5))
+    
+        shuffle(self.participant) # Mélanger les participants
+
+        self.tour = 0 # répresente la x+1 fois que un joueur joue
+        self.infoExceptionnelle = None # peux répresenter la String indiquant une potentiel erreur
+        self.infoErreur = None # peux répresenter la String indiquant que le domino joué ne peux être joué
+        self.info = None # peux répresenter la String indiquant qui est en train de jouer
+        self.passer = 0 # Compteur du nombre de &#39;PASSER&#39; jouer à la suite par les joueurs
+
+    def vérifie(self, domino_joue):
+        &#34;&#34;&#34;
+        Méthode qui vérifie si le domino chosi peut être joué et si oui où.
+        Prend en argument: &#39;domino_joue&#39; un tuple qui contient les coordonnées du domino choisi
+        Retourne un tuple contenant:
+            - En première position un boolean: True si le domino peut être joué, False si non
+            - En seconde position une liste de tuples indiquant où le domino peut être joué et dans quel sens il doit être posé
+                ↪ Ex: le  tuple (&#39;left&#39;, 1, 0) indique que le domino peux être placé à gauche en le retournant
+                ↪ Ex: le  tuple (None, 0, 1) indique que le domino peux être placé à droite sans le retourner
+            ↪ Cas particulié: la méthode retourne le tuple (False,None) quand le domino ne peux pas être placé
+        &#34;&#34;&#34;
+        
+        verifaction = {1: [False,(&#39;left&#39;,1,0)], 2: [False, (&#39;left&#39;,0,1)], 3: [False,(None,0,1)], 4: [False,(None,1,0)]} # Choix d&#39;un dictionnaire pour dijoncter les quatres cas possible  (=&gt; pratique)
+
+        if domino_joue[0] == domino_joue[1] == self.affichage.plateau[0][0]: return True, [(&#39;left&#39;,1,0)]
+        elif domino_joue[0] == domino_joue[1] == self.affichage.plateau[-1][1]: return True, [(None,1,0)]
+
+        if domino_joue[0] == self.affichage.plateau[0][0]: 
+            self.infoErreur = None
+            verifaction[1][0]=True
+        if domino_joue[1] == self.affichage.plateau[0][0]: 
+            verifaction[2][0]=True
+            self.infoErreur = None
+        if domino_joue[0] == self.affichage.plateau[-1][1]: 
+            verifaction[3][0]=True
+            self.infoErreur = None
+        if domino_joue[1] == self.affichage.plateau[-1][1]: 
+            verifaction[4][0]=True
+            self.infoErreur = None
+
+        à_return = [0]
+        for i in sorted(verifaction.keys()):
+            valeur = verifaction[i]
+            if valeur[0] == True:  
+                à_return[0]+=1
+                à_return.append(valeur[1])
+        if à_return[0] &gt;=1: 
+            return True, à_return[1:] 
+        return False, None
+
+    def jouer_piocher(self, joueur_qui_joue):
+        &#34;&#34;&#34;
+        Méthode faisant piocher le participant si il choisie dans son menu PIOCHER et remplace le bouton PIOCHER par PASSER qquand la pioche est vide
+        Prend en argument: l&#39;objet &#39;joueur_qui_joue&#39;, qui est le participant qui est en train de jouer
+        Retourne rien
+        &#34;&#34;&#34;
+        if self.pioche.dominos != []: 
+            joueur_qui_joue.deck.insert(-2, self.pioche.piocher()) 
+            self.infoErreur = None
+        else: 
+            for participant in self.participant:
+                participant.deck[-1] = &#34;PASSER&#34;
+            self.infoExceptionnelle = &#34;La pioche est maintenant vide. Si vous ne pouvais pas joueur, vous passez votre tour&#34;
+            self.infoErreur = None
+
+    def jouer_passer(self):
+        &#34;&#34;&#34;
+        Méthode qui permet aux participants de passer leur tour. 
+        Cette méthode vérifie aussi si seulement le je est finissable: si oui elle le dit au joueur, si non elle determine un ou plusieurs gagnants.
+        La méthode prend aucun argument et ne retourne rien
+        &#34;&#34;&#34;
+        self.passer +=1    
+        self.infoErreur = None
+        if self.passer &gt;= self.nombre_de_participant:
+            i = 0
+            domino_trouvé = False  # Flag pour indiquer si un domino a été trouvé
+
+            while i &lt; len(self.participant) and not domino_trouvé:
+                participant = self.participant[i]
+                j = 0
+
+                while j &lt; len(participant.deck) and not domino_trouvé:
+                    domino = participant.deck[j]
+                    verif = self.vérifie(domino)
+                    if verif[0] == True:
+                        if self.passer &gt;= 2 * self.nombre_de_participant:
+                            self.infoErreur = f&#34;\u2192 {participant.nom}, peut jouer un domino&#34;
+                        else:
+                            self.infoErreur = &#34;\u2192 Un joueur peux jouer un domino, vérifiez votre deck&#34;
+                        domino_trouvé = True  # Met à jour le flag pour arrêter les boucles
+                    j += 1 # Passe au domino suivant
+
+                i += 1  # Passe au participant suivant
+            
+            if not domino_trouvé: # Détermine un ou plusieur gagnant si personne ne peut joueur
+                liste_gagnant = [self.participant[0]]
+                for i in range(1,len(self.participant)):
+                    if len(liste_gagnant[0].deck)&gt;len(self.participant[i].deck): liste_gagnant = [self.participant[i]]
+                    if len(liste_gagnant[0].deck)==len(self.participant[i].deck): liste_gagnant.append(self.participant[i])
+                self.affichage.fin(liste_gagnant)       
+
+    def jouer_un_domino(self, joueur_qui_joue, domino_joue, index_du_domino_joue, bot=False):
+        &#34;&#34;&#34;
+        Méthode qui permet aux joueurs de jouer un domino sur le plateau après avoir vérifié avec la methode &#39;vérifie()&#39; si il est correct ou non
+        Prend pour argument:
+            - l&#39;objet &#39;joueur_qui_joue&#39; représentant le joueur qui est en train de jouer
+            - le tuple &#39;domino_joue&#39; étant le domino que le joueur veut jouer
+            - l&#39;integer &#39;index_du_domino_joue&#39; étant l&#39;index du domino que le joueur veut jouer dans la liste de son deck
+        La méthode retourne si un domino peux être posé ou non par un boolean (True si oui, False si non)
+        &#34;&#34;&#34;
+        self.passer = 0
+        verif = self.vérifie(domino_joue)
+        if verif[0] == True: 
+            if len(verif[1])==1 or bot:
+                if verif[1][0][0] == None:
+                    self.affichage.plateau.append((domino_joue[verif[1][0][1]],domino_joue[verif[1][0][2]]))
+                else:
+                    self.affichage.plateau.appendleft((domino_joue[verif[1][0][1]],domino_joue[verif[1][0][2]]))
+                joueur_qui_joue.deck.pop(index_du_domino_joue)
+
+            else:
+                x, choix = self.affichage.plateau_et_deck(joueur_qui_joue.deck, True, self.info, joueur_qui_joue.nom, self.infoExceptionnelle, self.infoErreur, False, domino_joue)
+                if choix == 0: 
+                    self.affichage.plateau.append((domino_joue[verif[1][1][1]],domino_joue[verif[1][1][2]]))
+                    joueur_qui_joue.deck.pop(index_du_domino_joue)
+
+                if choix == 1: 
+                    self.affichage.plateau.appendleft((domino_joue[verif[1][0][1]],domino_joue[verif[1][0][2]]))
+                    joueur_qui_joue.deck.pop(index_du_domino_joue)
+
+            return True
+        else: return False
+
+    def jouer(self, joueur_qui_joue):
+        &#34;&#34;&#34;
+        Méthode qui dirige le déroulement du tour du joueur qui joue:
+            1. Affiche le plateau avec le deck du joueur
+            2. Redirige vers la bonne méthode en fonction de l&#39;input du joueur:
+                - &#39;jouer_piocher(...)&#39; si le joueur a pioché
+                - &#39;jouer_passer()&#39; si le joueur passe son tour
+                - &#39;jouer_un_domino(...)&#39; si le joueur joue un domino
+        Prend pour argument &#39;joueur_qui_joue&#39; un joueur qui joue
+        Retourne rien
+        &#34;&#34;&#34;
+        
+        afficher_plateau = True
+        self.info = f&#34;{joueur_qui_joue.nom} vous devez jouer&#34;
+        
+        domino_joue, index_du_domino_joue = self.affichage.plateau_et_deck(joueur_qui_joue.deck, afficher_plateau, self.info, joueur_qui_joue.nom, self.infoExceptionnelle, self.infoErreur)
+        if domino_joue == &#34;PIOCHER&#34;: 
+            self.jouer_piocher(joueur_qui_joue)
+            self.tour+=1
+        elif domino_joue == &#34;PASSER&#34;: 
+            self.jouer_passer()
+            self.tour+=1
+        else: 
+            if self.jouer_un_domino(joueur_qui_joue, domino_joue, index_du_domino_joue) == False:
+                self.infoErreur = f&#34;Ce domino ne peux pas être joué. Veuillez rejouer {joueur_qui_joue.nom}&#34;
+            else:
+                self.tour+=1        
+
+    def jouerBot(self, joueur_qui_joue, i=0):
+        &#34;&#34;&#34;
+        Méthode qui permet au bot de jouer en testant pour chaque domino si il peut être posé et si oui il arrête de tester et pose le premier domino qui fonctionne
+        Prend en argument &#39;joueur_qui_joue&#39; un objet issu de la classe &#39;Bot&#39; et qui est un bot qui essaye de jouer
+        Retourne rien 
+        &#34;&#34;&#34;
+        i=0
+        taille = len(joueur_qui_joue.deck)
+        message = f&#34;{joueur_qui_joue.nom} a joué {joueur_qui_joue.deck[i]}&#34;
+        while i&lt;taille and self.jouer_un_domino(joueur_qui_joue, joueur_qui_joue.deck[i], i, True) == False:
+            i+=1 
+            if i==taille and joueur_qui_joue.deck[-1] == &#34;PIOCHER&#34;: 
+                message= f&#34;{joueur_qui_joue.nom} a pioché&#34;
+                self.jouer_piocher(joueur_qui_joue)
+            elif i==taille and joueur_qui_joue.deck[-1] == &#34;PASSER&#34;: 
+                message = f&#34;{joueur_qui_joue.nom} a passé son tour&#34;
+                self.jouer_passer() 
+            else:
+                message = f&#34;{joueur_qui_joue.nom} a joué {joueur_qui_joue.deck[i]}&#34;
+ 
+        self.affichage.bot(message)
+        self.tour +=1
+
+    def partie(self):
+        &#34;&#34;&#34;
+        Méthode principale du programme: 
+            1. Fait jouer le premeir joueur en lui imposant de poser un domino de son jeu
+            2. Fait jouer un par un les joueurs et les bots
+            3. Check si il y a un ou plusieurs gagnants et si oui redirige vers &#39;self.affichage.fin(...)&#39;
+        La méthode prend aucun argument et retourne rien
+        &#34;&#34;&#34;
+        partie_en_cours = True
+        joueur_qui_joue = self.participant[-1]
+
+        # Initialise le jeu en fesant jouer le premier joueur
+        if joueur_qui_joue.__class__.__name__ == &#39;Bot&#39;:
+            message= f&#34;{joueur_qui_joue.nom} à jouer le premier domino&#34;
+            self.affichage.plateau.append(joueur_qui_joue.deck.pop(0))
+            self.affichage.bot(message)
+        else:
+            info = f&#34;{joueur_qui_joue.nom} vous êtes le premier joueur à jouer, Posez le premier domino&#34;
+            domino_joue, index_du_domino_joue = self.affichage.plateau_et_deck(joueur_qui_joue.deck[:-1], False, info, joueur_qui_joue.nom, &#34;PREMIER TOUR&#34;, None)
+            joueur_qui_joue.deck.pop(index_du_domino_joue)
+            self.affichage.plateau.append(domino_joue)
+            self.affichage.print_plateau()
+            sleep(1.5)
+
+
+        while partie_en_cours:
+            
+            joueur_qui_joue = self.participant[self.tour % self.nombre_de_participant]
+
+            if joueur_qui_joue.__class__.__name__ == &#39;Bot&#39;:
+                self.affichage.console.clear()
+                self.affichage.print_plateau()
+                sleep(1.5)
+                self.jouerBot(joueur_qui_joue)
+            else:
+                self.jouer(joueur_qui_joue)
+
+            if joueur_qui_joue.deck == [&#34;PIOCHER&#34;] or joueur_qui_joue.deck == [&#34;PASSER&#34;]: # test si il y a un gagnant
+                self.affichage.fin([joueur_qui_joue])</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="jeu.Jeu.jouer"><code class="name flex">
+<span>def <span class="ident">jouer</span></span>(<span>self, joueur_qui_joue)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Méthode qui dirige le déroulement du tour du joueur qui joue:
+1. Affiche le plateau avec le deck du joueur
+2. Redirige vers la bonne méthode en fonction de l'input du joueur:
+- 'jouer_piocher(&hellip;)' si le joueur a pioché
+- 'jouer_passer()' si le joueur passe son tour
+- 'jouer_un_domino(&hellip;)' si le joueur joue un domino
+Prend pour argument 'joueur_qui_joue' un joueur qui joue
+Retourne rien</p></div>
+</dd>
+<dt id="jeu.Jeu.jouerBot"><code class="name flex">
+<span>def <span class="ident">jouerBot</span></span>(<span>self, joueur_qui_joue, i=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Méthode qui permet au bot de jouer en testant pour chaque domino si il peut être posé et si oui il arrête de tester et pose le premier domino qui fonctionne
+Prend en argument 'joueur_qui_joue' un objet issu de la classe 'Bot' et qui est un bot qui essaye de jouer
+Retourne rien</p></div>
+</dd>
+<dt id="jeu.Jeu.jouer_passer"><code class="name flex">
+<span>def <span class="ident">jouer_passer</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Méthode qui permet aux participants de passer leur tour.
+Cette méthode vérifie aussi si seulement le je est finissable: si oui elle le dit au joueur, si non elle determine un ou plusieurs gagnants.
+La méthode prend aucun argument et ne retourne rien</p></div>
+</dd>
+<dt id="jeu.Jeu.jouer_piocher"><code class="name flex">
+<span>def <span class="ident">jouer_piocher</span></span>(<span>self, joueur_qui_joue)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Méthode faisant piocher le participant si il choisie dans son menu PIOCHER et remplace le bouton PIOCHER par PASSER qquand la pioche est vide
+Prend en argument: l'objet 'joueur_qui_joue', qui est le participant qui est en train de jouer
+Retourne rien</p></div>
+</dd>
+<dt id="jeu.Jeu.jouer_un_domino"><code class="name flex">
+<span>def <span class="ident">jouer_un_domino</span></span>(<span>self, joueur_qui_joue, domino_joue, index_du_domino_joue, bot=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Méthode qui permet aux joueurs de jouer un domino sur le plateau après avoir vérifié avec la methode 'vérifie()' si il est correct ou non
+Prend pour argument:
+- l'objet 'joueur_qui_joue' représentant le joueur qui est en train de jouer
+- le tuple 'domino_joue' étant le domino que le joueur veut jouer
+- l'integer 'index_du_domino_joue' étant l'index du domino que le joueur veut jouer dans la liste de son deck
+La méthode retourne si un domino peux être posé ou non par un boolean (True si oui, False si non)</p></div>
+</dd>
+<dt id="jeu.Jeu.partie"><code class="name flex">
+<span>def <span class="ident">partie</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Méthode principale du programme:
+1. Fait jouer le premeir joueur en lui imposant de poser un domino de son jeu
+2. Fait jouer un par un les joueurs et les bots
+3. Check si il y a un ou plusieurs gagnants et si oui redirige vers 'self.affichage.fin(&hellip;)'
+La méthode prend aucun argument et retourne rien</p></div>
+</dd>
+<dt id="jeu.Jeu.vérifie"><code class="name flex">
+<span>def <span class="ident">vérifie</span></span>(<span>self, domino_joue)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Méthode qui vérifie si le domino chosi peut être joué et si oui où.
+Prend en argument: 'domino_joue' un tuple qui contient les coordonnées du domino choisi
+Retourne un tuple contenant:
+- En première position un boolean: True si le domino peut être joué, False si non
+- En seconde position une liste de tuples indiquant où le domino peut être joué et dans quel sens il doit être posé
+↪ Ex: le
+tuple ('left', 1, 0) indique que le domino peux être placé à gauche en le retournant
+↪ Ex: le
+tuple (None, 0, 1) indique que le domino peux être placé à droite sans le retourner
+↪ Cas particulié: la méthode retourne le tuple (False,None) quand le domino ne peux pas être placé</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="jeu.Joueur"><code class="flex name class">
+<span>class <span class="ident">Joueur</span></span>
+<span>(</span><span>pioche, nom, nombre_de_domino)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Classe qui crée un Joueur / Classe Mère de Bot</p>
+<p>Initialise le deck du joueur en retirant les dominos piochés dans la pioche et donne un nom au joueur
+Prend en argument:
+- l'objet 'pioche' pour creer un deck au joueur tout en
+retirant les domino de la pioche
+- la String 'nom' pour donner un nom au joueur
+- l'integer 'nombre_de_domino' détermine le nombre de dominos donnés au participant</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Joueur():
+    &#34;&#34;&#34;
+    Classe qui crée un Joueur / Classe Mère de Bot
+    &#34;&#34;&#34;
+    def __init__(self, pioche, nom, nombre_de_domino):
+        &#34;&#34;&#34;
+        Initialise le deck du joueur en retirant les dominos piochés dans la pioche et donne un nom au joueur
+        Prend en argument:
+            - l&#39;objet &#39;pioche&#39; pour creer un deck au joueur tout en  retirant les domino de la pioche
+            - la String &#39;nom&#39; pour donner un nom au joueur
+            - l&#39;integer &#39;nombre_de_domino&#39; détermine le nombre de dominos donnés au participant
+        &#34;&#34;&#34;
+
+        assert nombre_de_domino == 7 or nombre_de_domino == 5, &#34;Valeur du domino doit être 5 ou 7&#34;
+
+        self.deck = []
+        for i in range(nombre_de_domino):
+            self.deck.append(pioche.piocher())
+        self.deck.append(&#34;PIOCHER&#34;)
+        self.nom = nom</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="jeu.Bot" href="#jeu.Bot">Bot</a></li>
+</ul>
+</dd>
+<dt id="jeu.Pioche"><code class="flex name class">
+<span>class <span class="ident">Pioche</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Classe qui crée une pioche de dominos, et qui s'apparente à la classe Domino demandée</p>
+<p>Instancie la pioche de 28 dominos différents puis la mélange. La pioche est une liste de tuple</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Pioche():
+    &#34;&#34;&#34;
+    Classe qui crée une pioche de dominos, et qui s&#39;apparente à la classe Domino demandée
+    &#34;&#34;&#34;
+    def __init__(self):
+        &#34;&#34;&#34;
+        Instancie la pioche de 28 dominos différents puis la mélange. La pioche est une liste de tuple 
+        &#34;&#34;&#34;
+        self.dominos = []
+        for haut in range(7):
+            for bas in range(haut, 7):
+                objet_domino = Domino(haut,bas)
+                self.dominos.append((objet_domino.haut, objet_domino.bas))
+        shuffle(self.dominos)
+
+    def piocher(self):
+        &#34;&#34;&#34;
+        Méthode qui permet de piocher un domino dans la pioche.
+        Enlève le domino pioché de la pioche et renvoie le tuple du domino pioché
+        &#34;&#34;&#34;
+        domino_pioché = self.dominos[-1]
+        self.dominos.pop()
+        return domino_pioché</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="jeu.Pioche.piocher"><code class="name flex">
+<span>def <span class="ident">piocher</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Méthode qui permet de piocher un domino dans la pioche.
+Enlève le domino pioché de la pioche et renvoie le tuple du domino pioché</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="jeu.Affichage" href="#jeu.Affichage">Affichage</a></code></h4>
+<ul class="">
+<li><code><a title="jeu.Affichage.bot" href="#jeu.Affichage.bot">bot</a></code></li>
+<li><code><a title="jeu.Affichage.fin" href="#jeu.Affichage.fin">fin</a></code></li>
+<li><code><a title="jeu.Affichage.input" href="#jeu.Affichage.input">input</a></code></li>
+<li><code><a title="jeu.Affichage.plateau_et_deck" href="#jeu.Affichage.plateau_et_deck">plateau_et_deck</a></code></li>
+<li><code><a title="jeu.Affichage.print_plateau" href="#jeu.Affichage.print_plateau">print_plateau</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="jeu.Bot" href="#jeu.Bot">Bot</a></code></h4>
+</li>
+<li>
+<h4><code><a title="jeu.Domino" href="#jeu.Domino">Domino</a></code></h4>
+</li>
+<li>
+<h4><code><a title="jeu.Jeu" href="#jeu.Jeu">Jeu</a></code></h4>
+<ul class="two-column">
+<li><code><a title="jeu.Jeu.jouer" href="#jeu.Jeu.jouer">jouer</a></code></li>
+<li><code><a title="jeu.Jeu.jouerBot" href="#jeu.Jeu.jouerBot">jouerBot</a></code></li>
+<li><code><a title="jeu.Jeu.jouer_passer" href="#jeu.Jeu.jouer_passer">jouer_passer</a></code></li>
+<li><code><a title="jeu.Jeu.jouer_piocher" href="#jeu.Jeu.jouer_piocher">jouer_piocher</a></code></li>
+<li><code><a title="jeu.Jeu.jouer_un_domino" href="#jeu.Jeu.jouer_un_domino">jouer_un_domino</a></code></li>
+<li><code><a title="jeu.Jeu.partie" href="#jeu.Jeu.partie">partie</a></code></li>
+<li><code><a title="jeu.Jeu.vérifie" href="#jeu.Jeu.vérifie">vérifie</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="jeu.Joueur" href="#jeu.Joueur">Joueur</a></code></h4>
+</li>
+<li>
+<h4><code><a title="jeu.Pioche" href="#jeu.Pioche">Pioche</a></code></h4>
+<ul class="">
+<li><code><a title="jeu.Pioche.piocher" href="#jeu.Pioche.piocher">piocher</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>
